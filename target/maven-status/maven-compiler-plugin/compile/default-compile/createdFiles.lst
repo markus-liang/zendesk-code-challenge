@@ -1,0 +1,5 @@
+com/maynooth/zcc/Config.class
+com/maynooth/zcc/connection/Connector.class
+com/maynooth/zcc/zapi/Zapi.class
+com/maynooth/zcc/Display.class
+com/maynooth/zcc/Main.class
