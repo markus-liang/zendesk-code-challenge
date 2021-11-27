@@ -20,6 +20,10 @@
         - input 0 : Exit from the application
         - input 1 : Go to previous page of the ticket list
         - input 2 : Go to next page of the ticket list
-        - input 3 : 
+        - input 3 : Display  the ticket detail menu 
             - The system will ask user to input a ticket ID
             - The system displays the details of the ticket which ID is inputted by the user
+            - The system will show menu list:
+                - input 0: Exit from the application
+                - input 1: Back to list page
+                - input 2: View another ticket detail

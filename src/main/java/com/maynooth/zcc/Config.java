@@ -5,15 +5,14 @@ import java.util.*;
 
 /**
  * @author markus
- * Config class: a singleton class used to handle the configuration file
+ * Config class: a singleton class used to handle the configuration file.
  */
 public class Config {
     private static Config instance;
     private static Hashtable<String, String> settings;
     
     /**
-     * Config constructor read the configuration file 
-     * and put the value into a HashTable
+     * Config constructor read the configuration file and put the value into a HashTable.
      */    
     private Config(){
         settings = new Hashtable<>();
@@ -39,22 +38,25 @@ public class Config {
             while (scanner.hasNextLine()) {
                String line = scanner.nextLine();
                String[] lines = line.split("=");
-               switch(lines[0].trim()){
-                   case "API": settings.replace("API", lines[1].trim());
-                        break;
-                   case "USERNAME": settings.replace("USERNAME", lines[1].trim());
-                        break;
-                   case "PASSWORD": settings.replace("PASSWORD", lines[1].trim());
-                        break;
+               if(lines.length == 2){
+                    switch(lines[0].trim()){
+                        case "API": settings.replace("API", lines[1].trim());
+                             break;
+                        case "USERNAME": settings.replace("USERNAME", lines[1].trim());
+                             break;
+                        case "PASSWORD": settings.replace("PASSWORD", lines[1].trim());
+                             break;
+                    }                   
                }
             }
-        }catch(Exception ex){
-            System.out.println("Error reading config file : " + ex.getMessage());
+        }catch(Exception e){
+            e.printStackTrace();
+            System.out.println("Error reading config file : " + e.getMessage());
         }
     }
     
     /**
-     * getInstance method: return the Config object
+     * getInstance method: return the Config object.
      */    
     public static Config getInstance(){
         if(instance == null){
@@ -64,8 +66,8 @@ public class Config {
     }
     
     /**
-     * get method: get the setting value of the given key
-     * @param aKey: the configuration key
+     * get method: get the setting value of the given key.
+     * @param aKey: the configuration key.
      */    
     public String get(String aKey){
         return settings.get(aKey);

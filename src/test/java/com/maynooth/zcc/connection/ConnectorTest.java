@@ -31,7 +31,7 @@ public class ConnectorTest {
     
     public ConnectorTest() {
     }
-        
+
     @Before
     public void setUp() {
         Config config = Config.getInstance();

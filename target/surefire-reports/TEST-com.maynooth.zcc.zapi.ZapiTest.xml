@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="4" failures="0" name="com.maynooth.zcc.zapi.ZapiTest" time="0.054" errors="0" skipped="0">
+<testsuite tests="4" failures="0" name="com.maynooth.zcc.zapi.ZapiTest" time="0.072" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="11.0.9+7-LTS"/>
@@ -65,8 +65,8 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.maynooth.zcc.zapi.ZapiTest" name="testSetPageSize" time="0.018"/>
+  <testcase classname="com.maynooth.zcc.zapi.ZapiTest" name="testSetPageSize" time="0.026"/>
   <testcase classname="com.maynooth.zcc.zapi.ZapiTest" name="testGetUsers" time="0.003"/>
-  <testcase classname="com.maynooth.zcc.zapi.ZapiTest" name="testGetTickets" time="0.025"/>
-  <testcase classname="com.maynooth.zcc.zapi.ZapiTest" name="testGetTicket" time="0.008"/>
+  <testcase classname="com.maynooth.zcc.zapi.ZapiTest" name="testGetTickets" time="0.032"/>
+  <testcase classname="com.maynooth.zcc.zapi.ZapiTest" name="testGetTicket" time="0.011"/>
 </testsuite>

@@ -1,5 +1,10 @@
 com/maynooth/zcc/Config.class
 com/maynooth/zcc/connection/Connector.class
+com/maynooth/zcc/ui/BeforeState.class
+com/maynooth/zcc/ui/DetailState.class
+com/maynooth/zcc/ui/AfterState.class
+com/maynooth/zcc/ui/Controller.class
 com/maynooth/zcc/zapi/Zapi.class
-com/maynooth/zcc/Display.class
+com/maynooth/zcc/ui/UIState.class
+com/maynooth/zcc/ui/InitState.class
 com/maynooth/zcc/Main.class
