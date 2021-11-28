@@ -9,7 +9,7 @@ import org.json.JSONObject;
  * This state is activated when user choose "ticket detail" on ticket list display.
  */
 public class DetailState extends UIState {
-    private long ticketID;
+    long ticketID;
     
     /**
      * DetailState constructor.
@@ -25,6 +25,7 @@ public class DetailState extends UIState {
      * run method: Override the run method of the parent.
      * Need to ask ticket ID from user.
      */
+    @Override
     void run(){
         try
         {
@@ -45,11 +46,11 @@ public class DetailState extends UIState {
      * showMenu method: Override the showMenu method of the parent.
      * In this state, the available menu is change.
      */
+    @Override
     void showMenu(){
         numberOfMenu = 2;
         
         System.out.println("\n==========  Zendesk Ticketing ==========\n");
-
         System.out.println("0. Close application");
         System.out.println("1. Back to list");
         System.out.println("2. View another ticket\n");
@@ -57,7 +58,8 @@ public class DetailState extends UIState {
 
     /**
      * sendRequest method: Call Zapi to get the ticket details. 
-     */    
+     */
+    @Override
     void sendRequest() throws Exception {
         JSONObject response = api.getUsers();
         userMap = mapUserIDToName(response.getJSONArray("users"));
@@ -67,7 +69,7 @@ public class DetailState extends UIState {
 
     /**
      * askTicketID method: Ask user to enter the ticket ID.
-     */    
+     */
     void askTicketID(){
         boolean isValid = false;
         do{
@@ -82,7 +84,8 @@ public class DetailState extends UIState {
     
     /**
      * callChangeState method: Tell the controller to change the UI state.
-     */    
+     */
+    @Override
     void callChangeState(int aInput){
         switch(aInput){
             case 0: controller.changeState("EXIT");

@@ -1,7 +1,6 @@
 package com.maynooth.zcc.zapi;
 
 import com.maynooth.zcc.connection.Connector;
-import java.math.BigInteger;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.AfterClass;
@@ -62,9 +61,9 @@ public class ZapiTest {
         JSONObject response = api.getTicket(100);
         assertTrue(response instanceof JSONObject);
         assertTrue(response.getJSONObject("ticket") instanceof JSONObject);
-        assertEquals(new BigInteger("100"), response.getJSONObject("ticket").getBigInteger("id"));
+        assertEquals(100L, response.getJSONObject("ticket").getLong("id"));
         assertEquals("adipisicing duis quis consequat velit", response.getJSONObject("ticket").getString("subject"));
-        assertEquals(new BigInteger("388792560458"), response.getJSONObject("ticket").getBigInteger("submitter_id"));
+        assertEquals(388792560458L, response.getJSONObject("ticket").getLong("submitter_id"));
         assertEquals("2021-11-20T10:39:48Z", response.getJSONObject("ticket").getString("created_at"));        
     }
 
@@ -90,7 +89,7 @@ public class ZapiTest {
         // check "tickets"
         assertTrue(response.getJSONArray("tickets") instanceof JSONArray);
         assertEquals(2, response.getJSONArray("tickets").length());
-        assertEquals(new BigInteger("101"), response.getJSONArray("tickets").getJSONObject(1).getBigInteger("id"));
+        assertEquals(101L, response.getJSONArray("tickets").getJSONObject(1).getLong("id"));
         assertEquals("in nostrud occaecat consectetur aliquip", response.getJSONArray("tickets").getJSONObject(1).getString("subject"));
 
         // get next
@@ -100,7 +99,7 @@ public class ZapiTest {
 
         // check "next tickets"
         assertTrue(response.getJSONArray("tickets") instanceof JSONArray);
-        assertEquals(new BigInteger("100"), response.getJSONArray("tickets").getJSONObject(0).getBigInteger("id"));
+        assertEquals(100L, response.getJSONArray("tickets").getJSONObject(0).getLong("id"));
         assertEquals("adipisicing duis quis consequat velit", response.getJSONArray("tickets").getJSONObject(0).getString("subject"));
 
         // go back to previous list
@@ -111,7 +110,7 @@ public class ZapiTest {
         // check "previous tickets"
         assertTrue(response.getJSONArray("tickets") instanceof JSONArray);
         assertEquals(2, response.getJSONArray("tickets").length());
-        assertEquals(new BigInteger("101"), response.getJSONArray("tickets").getJSONObject(1).getBigInteger("id"));
+        assertEquals(101L, response.getJSONArray("tickets").getJSONObject(1).getLong("id"));
         assertEquals("in nostrud occaecat consectetur aliquip", response.getJSONArray("tickets").getJSONObject(1).getString("subject"));
         
         verify(connector, times(3)).getResponse();

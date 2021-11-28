@@ -21,7 +21,8 @@ public class BeforeState extends UIState {
     
     /**
      * sendRequest method: Call Zapi to get the previous page of the ticket list. 
-     */    
+     */
+    @Override
     void sendRequest() throws Exception {
         JSONObject response = api.getUsers();
         userMap = mapUserIDToName(response.getJSONArray("users"));

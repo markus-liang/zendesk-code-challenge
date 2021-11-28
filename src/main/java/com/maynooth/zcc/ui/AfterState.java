@@ -13,7 +13,7 @@ public class AfterState extends UIState{
      * AfterState constructor.
      * @param aApi: The Zapi class.
      * @param aController: The controller that holds this class.
-     */    
+     */
     public AfterState(Zapi aApi, Controller aController){
         api = aApi;
         controller = aController;
@@ -21,7 +21,8 @@ public class AfterState extends UIState{
 
     /**
      * sendRequest method: Call Zapi to get the next page of the ticket list.
-     */    
+     */
+    @Override
     void sendRequest() throws Exception {
         if (!lastTickets.getJSONObject("meta").getBoolean("has_more")){
             System.out.println("There is no more tickets available.");

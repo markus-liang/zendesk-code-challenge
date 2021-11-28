@@ -1,5 +1,9 @@
 com/maynooth/zcc/connection/ConnectorTest.class
-com/maynooth/zcc/ConfigTest.class
-com/maynooth/zcc/ui/ControllerTest.class
+com/maynooth/zcc/ui/AfterStateTest.class
+com/maynooth/zcc/ui/InitStateTest.class
 com/maynooth/zcc/zapi/MockData.class
 com/maynooth/zcc/zapi/ZapiTest.class
+com/maynooth/zcc/ConfigTest.class
+com/maynooth/zcc/ui/BeforeStateTest.class
+com/maynooth/zcc/ui/ControllerTest.class
+com/maynooth/zcc/ui/DetailStateTest.class

@@ -62,6 +62,9 @@ public class Controller {
         }
     }
     
+    /**
+     * getState method: Get current UI state.
+     */    
     UIState getState(){
         return uiState;
     }
